@@ -8,6 +8,7 @@ from discord.utils import get
 from discord import FFmpegPCMAudio
 import asyncio
 import time
+import os
 
 bot = commands.Bot(command_prefix='$')
 client = discord.Client()
@@ -373,5 +374,7 @@ async def 명령어(ctx):
 !목록초기화 -> 목록에 추가된 모든 노래를 지웁니다.
 \n!대기열추가 [노래] -> 노래를 대기열에 추가합니다.
 !대기열삭제 [숫자] -> 대기열에서 입력한 숫자에 해당하는 노래를 지웁니다.""", color = 0x00ff00))
+ 
+access_token = os.environ["BOT_TOKEN"]
 
-bot.run('ODMzMTYwNDUxNzMwNzAyMzc2.YHuTIw.xqzCE6Jtw_Mpl7W6K89Ep-lLy-E')
+bot.run(access_token)
